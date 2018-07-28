@@ -39,8 +39,6 @@ namespace DiscordNetPlus.Commands
         }
     }
 
-    
-
     public class SayCommand : CommandBase
     {
         [Command("say")]

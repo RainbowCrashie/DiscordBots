@@ -32,7 +32,7 @@ namespace DiscordNetPlus.Commands
             embed.AddInlineField("Developer", "<@!180615754603823104>");
             embed.AddInlineField(".NET Version", Environment.Version);
             embed.AddInlineField("Uptime", Uptime.Print);
-            
+                                    
             await ReplyEmbed(embed);
         }
 
