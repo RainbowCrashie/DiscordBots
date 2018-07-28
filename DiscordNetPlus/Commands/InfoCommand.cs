@@ -66,10 +66,7 @@ namespace DiscordNetPlus.Commands
             embed.AddField("Joined",
                 $"{(int)joined.TotalDays} Days {joined.Hours} Hours {joined.Minutes} Minutes Ago " +
                 $"({user.CreatedAt:yyyy.M.d h:m:s UTC})");
-
-            var a = string.Join(", ", user.Roles.Where(r => r.Name != "@everyone").Select(ro => ro.Mention));
-            ;
-
+            
             embed.AddField("Roles",
                 (string.Join(", ", user.Roles.Where(r => r.Name != "@everyone").Select(ro => ro.Mention))) ?? "No Roles"
             );
