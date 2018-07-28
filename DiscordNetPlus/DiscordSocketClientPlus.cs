@@ -4,6 +4,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using DiscordNetPlus.Commands;
+using DiscordNetPlus.Interaction;
 using DiscordNetPlus.Properties;
 
 namespace DiscordNetPlus
@@ -12,6 +13,7 @@ namespace DiscordNetPlus
     {
         private string Token { get; }
         public CommandHandler CommandHandler { get; set; }
+        public RelationMemory RelationMemory { get; set; }
 
         public DiscordSocketClientPlus(string token) : base(new DiscordSocketConfig {LogLevel = LogSeverity.Debug })
         {
@@ -28,6 +30,8 @@ namespace DiscordNetPlus
             CommandHandler = new CommandHandler(this);
             await CommandHandler.InitializeAsync();
 
+            RelationMemory = new RelationMemory();
+            
             await Task.Delay(5000);
             await SetGameAsync(Settings.Default.PlayngGame);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using BT7274.DataServices;
 using BT7274.MilitiaHeadquarters;
@@ -40,6 +41,7 @@ namespace BT7274
 
             Client = new DiscordSocketClientPlus(token);
             await Client.Start();
+            
 
             await Task.Delay(-1);
         }

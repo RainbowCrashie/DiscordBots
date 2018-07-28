@@ -39,7 +39,7 @@ namespace DiscordNetPlus
 
             Client.MessageReceived += HandleCommandAsync;
         }
-
+        
         public async Task HandleCommandAsync(SocketMessage s)
         {
             var message = s as SocketUserMessage;
@@ -49,7 +49,7 @@ namespace DiscordNetPlus
             var context = new MonaSocketCommandContext(Client, message);
 
             var prefix = Properties.Settings.Default.CommandPrefix;
-
+            
 #if DEBUG
             prefix = Properties.Settings.Default.DebugCommandPrefix;
 #endif
