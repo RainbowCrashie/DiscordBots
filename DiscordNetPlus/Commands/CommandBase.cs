@@ -56,6 +56,12 @@ namespace DiscordNetPlus.Commands
             await message.DeleteAsync();
         }
 
+        protected async Task<IUserMessage> DMReplyEmbed(Embed embed, string text = "")
+        {
+            var dmChannel = await Context.User.GetOrCreateDMChannelAsync();
+            return await dmChannel.SendMessageAsync(text, false, embed);
+        }
+
         protected static EmbedBuilder EmbedBuilderFactory()
         {
             var embed = new EmbedBuilder();
