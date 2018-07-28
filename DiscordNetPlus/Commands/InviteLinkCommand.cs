@@ -17,7 +17,7 @@ namespace DiscordNetPlus.Commands
         [Command("")]
         public async Task Dm()
         {
-            await GrantUrl(await Context.User.CreateDMChannelAsync());
+            //await GrantUrl(await Context.User.CreateDMChannelAsync());
         }
 
         public async Task GrantUrl(IChannel replyChannel)
