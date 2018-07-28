@@ -9,7 +9,7 @@ namespace DiscordNetPlus.Commands
     public class JankenCommand : CommandBase
     {
        #region Methods
-        [Command("rps"), Description("じゃんけん")]
+        [Command("rps"), Alias("じゃんけん"), Description("じゃんけん")]
         public async Task Janken([Summary("グー/チョキ/パー")]string te)
         {
             var userTe = Te.Parse(te);

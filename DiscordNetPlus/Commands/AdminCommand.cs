@@ -34,6 +34,7 @@ namespace DiscordNetPlus.Commands
             Settings.Default.PlayngGame = label;
             Settings.Default.Save();
             await Context.Client.SetGameAsync(label);
+            await Context.Client.SetGameAsync(label);
         }
     }
 }
