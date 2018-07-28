@@ -163,6 +163,7 @@
     <Compile Include="CommandHandler.cs" />
     <Compile Include="Commands\AdminCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="Commands\InfoCommand.cs" />
     <Compile Include="Commands\InviteLinkCommand.cs" />
     <Compile Include="Commands\JankenCommand.cs" />

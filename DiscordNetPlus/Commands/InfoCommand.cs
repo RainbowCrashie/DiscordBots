@@ -21,15 +21,15 @@ namespace DiscordNetPlus.Commands
                     Name = Context.Client.CurrentUser.Username,
                     IconUrl = Context.Client.CurrentUser.GetAvatarUrl()
                 },
-                Url = "https://discord.foxbot.me/docs/",
+                Url = "https://github.com/RainbowCrashie/DiscordBots",
                 Color = EmbedColor
             };
 
             embed.AddInlineField("Version", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             embed.AddInlineField("Library", "[`Discord.Net`](https://discord.foxbot.me/docs/)");
-            embed.AddInlineField("Running on", "Azure App Services");
+            embed.AddInlineField("Source Code", "[`GitHub`](https://github.com/RainbowCrashie/DiscordBots)");
 
-            embed.AddInlineField("Author", "<@!180615754603823104>");
+            embed.AddInlineField("Developer", "<@!180615754603823104>");
             embed.AddInlineField(".NET Version", Environment.Version);
             embed.AddInlineField("Uptime", Uptime.Print);
             
