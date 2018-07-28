@@ -28,8 +28,8 @@ namespace DiscordNetPlus.Commands
             embed.AddInlineField("Version", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             embed.AddInlineField("Library", "[`Discord.Net`](https://discord.foxbot.me/docs/)");
             embed.AddInlineField("Running on", "Azure App Services");
-            
-            embed.AddInlineField("Author", "mo");
+
+            embed.AddInlineField("Author", "<@!180615754603823104>");
             embed.AddInlineField(".NET Version", Environment.Version);
             embed.AddInlineField("Uptime", Uptime.Print);
             
@@ -60,15 +60,18 @@ namespace DiscordNetPlus.Commands
             embed.AddInlineField("Status", user.Status);
 
             embed.AddInlineField("Mention", user.Mention);
-            embed.AddInlineField("Playing", user.Game ?? new Game("nullpo", "", StreamType.NotStreaming));
+            embed.AddInlineField("Playing", user.Game?.ToString() ?? "Not Playing");
 
             var joined = DateTimeOffset.UtcNow - user.CreatedAt;
             embed.AddField("Joined",
                 $"{(int)joined.TotalDays} Days {joined.Hours} Hours {joined.Minutes} Minutes Ago " +
                 $"({user.CreatedAt:yyyy.M.d h:m:s UTC})");
 
+            var a = string.Join(", ", user.Roles.Where(r => r.Name != "@everyone").Select(ro => ro.Mention));
+            ;
+
             embed.AddField("Roles",
-                string.Join(", ", user.Roles.Where(r => r.Name != "@everyone"))
+                (string.Join(", ", user.Roles.Where(r => r.Name != "@everyone").Select(ro => ro.Mention))) ?? "No Roles"
             );
 
             await ReplyEmbed(embed);
